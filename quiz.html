@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="containers">
+        <div class="side1">
+            <div class="sidebar"> 
+                <ul>
+                    <li><a href="./quiz.html" id="link">Mathematics</a></li>
+                    <li><a href="./english.html" id="link">English</a></li>
+                    <li><a href="" id="link">Chemistry</a></li>
+                    <li><a href="" id="link">Physics</a></li>
+                    <li><a href="" id="link">Biology</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="quiz-container">
+            <div>
+                <img src="./free practice.PNG" alt="" class="topimg">
+            </div>
+            <div class="middlebar"> 
+                <div><a href="/"><i class="fa-solid fa-house home"></i></a></div>
+                <ul>
+                    <li><a href="./quiz.html" id="links">Mathematics</a></li>
+                    <li><a href="./english.html" id="links">English</a></li>
+                    <li><a href="./chemistry.html" id="links">Chemistry</a></li>
+                    <li><a href="./physics.html" id="links">Physics</a></li>
+                    <li><a href="./biology.html" id="links">Biology</a></li>
+                </ul>
+            </div>
+
+            <div class="container">
+                <h1 class="contain_h1"> Jamb Cbt Mathematics</h1>
+                <div id="quizQuestions"></div>
+                <button id="prevPage" style="display: none;">Previous</button>
+                <button id="nextPage">Next</button>
+                <button id="submitQuiz">Submit</button>
+                <div id="results" style="display: none;">
+                    <h2>Your Score: <span id="score"></span> / <span id="totalQuestions"></span></h2>
+                    <button id="viewAnswers">View Correct Answers</button>
+                </div>
+                <div id="answersPreview" style="display: none;">
+                    <h2>Correct Answers</h2>
+                    <ul id="correctAnswersList"></ul>
+                    <button id="onload">Restart Quiz</button>  
+
+                </div>
+            </div>
+        </div>
+   
+        <div class="side3">
+            <div class="sidebar"> 
+                <ul>
+                    <li><a href="" id="link">Literature</a></li>
+                    <li><a href="" id="link">CRS</a></li>
+                    <li><a href="" id="link">Economics</a></li>
+                    <li><a href="" id="link">Goverment</a></li>
+                    <li><a href="" id="link">History</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="./quiz.js"></script>
+</body>
+</html>
