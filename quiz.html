@@ -10,6 +10,9 @@
 <body>
     <div class="containers">
         <div class="side1">
+            <div class="calc-toggle">
+                <i class="fa-solid fa-calculator" id="toggleCalc"></i>
+            </div>
             <div class="sidebar"> 
                 <ul>
                     <li><a href="./quiz.html" id="link">Mathematics</a></li>
@@ -34,12 +37,12 @@
                     <li><a href="./biology.html" id="links">Biology</a></li>
                 </ul>
             </div>
-
+            
             <div class="container">
                 <h1 class="contain_h1"> Jamb Cbt Mathematics</h1>
                 <div id="quizQuestions"></div>
-                <button id="prevPage" style="display: none;">Previous</button>
-                <button id="nextPage">Next</button>
+                <button id="prevPage" style="display: none;"><i class="fa-solid fa-arrow-left"></i></button>
+                <button id="nextPage"><i class="fa-solid fa-arrow-right"></i></button>
                 <button id="submitQuiz">Submit</button>
                 <div id="results" style="display: none;">
                     <h2>Your Score: <span id="score"></span> / <span id="totalQuestions"></span></h2>
@@ -55,6 +58,9 @@
         </div>
    
         <div class="side3">
+            <!-- <div class="calc-toggle">
+                <i class="fa-solid fa-calculator" id="toggleCalc"></i>
+            </div> -->
             <div class="sidebar"> 
                 <ul>
                     <li><a href="" id="link">Literature</a></li>
@@ -64,6 +70,33 @@
                     <li><a href="" id="link">History</a></li>
                 </ul>
             </div>
+        </div>
+    </div>
+
+
+    <div id="calculator" class="hidden">
+        <input type="text" id="calc-display" disabled>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="deleteDisplay()">Del</button>
+            <button onclick="appendToDisplay('0')">00</button>
+            <button onclick="appendToDisplay('0')">00</button>
         </div>
     </div>
     <script src="./quiz.js"></script>

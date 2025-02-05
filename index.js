@@ -153,72 +153,163 @@ var mathematicsBank= [
 ]
 
 
-const questions = [
-    {
-        question: "What is the capital of France?",
-        answers: ["Paris", "London", "Berlin", "Madrid"],
-        correct: "Paris"
-    },
-    {
-        question: "What is 2 + 2?",
-        answers: ["3", "4", "5", "6"],
-        correct: "4"
-    },
-    {
-        question: "Which language is used for web development?",
-        answers: ["Python", "JavaScript", "C++", "Java"],
-        correct: "JavaScript"
-    }
-];
+const quizContainer = document.getElementById("quizQuestions");
+const resultsContainer = document.getElementById("results");
+const answersPreviewContainer = document.getElementById("answersPreview");
+const correctAnswersList = document.getElementById("correctAnswersList");
+const scoreDisplay = document.getElementById("score");
+const totalQuestionsDisplay = document.getElementById("totalQuestions");
+const nextBtn = document.getElementById("nextPage");
+const prevBtn = document.getElementById("prevPage");
+const submitQuiz = document.getElementById('submitQuiz')
+let currentPage = 1;
+const questionsPerPage = 8;
 
-let currentQuestionIndex = 0;
-let score = 0;
 
-const questionText = document.getElementById("question-text");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-button");
-const scoreDisplay = document.getElementById("score-display");
-
-function loadQuestion() {
-    resetState();
-    let currentQuestion = questions[currentQuestionIndex];
-    questionText.textContent = currentQuestion.question;
-
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.textContent = answer;
-        button.addEventListener("click", () => checkAnswer(answer, currentQuestion.correct));
-        answerButtons.appendChild(button);
-    });
+// shuffle the array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
 }
 
-function checkAnswer(selected, correct) {
-    if (selected === correct) {
-        score++;
-    }
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        loadQuestion();
-    } else {
-        showResults();
-    }
+// Function to load paginated questions
+function loadQuestions(page) {
+  quizContainer.innerHTML = ""; // Clear previous questions
+  shuffleArray(mathematicsBank)
+
+  let startIndex = (page - 1) * questionsPerPage;
+  let endIndex = startIndex + questionsPerPage;
+  let paginatedQuestions = mathematicsBank.slice(startIndex, endIndex);
+
+  paginatedQuestions.forEach((q, index) => {
+      const questionDiv = document.createElement("div");
+      questionDiv.classList.add("question");
+
+      const questionText = document.createElement("h3");
+      questionText.textContent = `${startIndex + index + 1}. ${q.question}`;
+      questionDiv.appendChild(questionText);
+
+      q.options.forEach((option, optIndex) => {
+          const optionContainer = document.createElement("div");
+          optionContainer.classList.add("option");
+
+          const label = document.createElement("label");
+          label.textContent = `${String.fromCharCode(65 + optIndex)} `; // A, B, C, D
+          label.style.fontWeight = "bold";
+
+          const radioInput = document.createElement("input");
+          radioInput.type = "radio";
+          radioInput.name = `question${startIndex + index}`;
+          radioInput.value = option;
+          radioInput.id = `q${startIndex + index}opt${optIndex}`;
+
+          const optionText = document.createElement("span");
+          optionText.textContent = ` ${option}`;
+
+          optionContainer.appendChild(label);
+          optionContainer.appendChild(radioInput);
+          optionContainer.appendChild(optionText);
+          questionDiv.appendChild(optionContainer);
+      });
+
+      quizContainer.appendChild(questionDiv);
+  });
+
+  // Disable/Enable navigation buttons
+  prevBtn.style.display = page === 1 ? "none" : "inline-block";
+  nextBtn.style.display = endIndex >= mathematicsBank.length ? "none" : "inline-block";
 }
 
-function resetState() {
-    answerButtons.innerHTML = "";
+// Handle quiz submission
+function handleSubmit() {
+  let score = 0;
+  mathematicsBank.forEach((q, index) => {
+      const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+      if (selectedOption && selectedOption.value === q.answer) {
+          score++;
+      }
+  });
+
+  scoreDisplay.textContent = score;
+  totalQuestionsDisplay.textContent = mathematicsBank.length;
+  resultsContainer.style.display = "block";
 }
 
-function showResults() {
-    questionText.textContent = "Quiz Completed!";
-    answerButtons.innerHTML = "";
-    scoreDisplay.textContent = `Your Score: ${score}/${questions.length}`;
-    nextButton.style.display = "none";
-}
-
-nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length) {
-        loadQuestion();
-    }
+// Pagination event listeners
+nextBtn.addEventListener("click", () => {
+  currentPage++;
+  loadQuestions(currentPage);
 });
 
-loadQuestion();
+prevBtn.addEventListener("click", () => {
+  currentPage--;
+  loadQuestions(currentPage);
+});
+
+
+// Handle quiz submission
+function handleSubmit() {
+  let score = 0;
+  mathematicsBank.forEach((q, index) => {
+      const selectedOption = document.querySelector(
+          `input[name="question${index}"]:checked`
+      );
+      if (selectedOption && selectedOption.value === q.answer) {
+          score++;
+      }
+  });
+
+  // Display score
+  scoreDisplay.textContent = score;
+  totalQuestionsDisplay.textContent = mathematicsBank.length;
+  resultsContainer.style.display = "block";
+  quizContainer.style.display = "none";
+  nextBtn.style.display = 'none'
+  prevBtn.style.display = 'none'
+  submitQuiz.style.display = 'none'
+  answersPreviewContainer.style.display = "none";
+
+}
+
+// Handle view correct answers
+function handleViewAnswers() {
+  correctAnswersList.innerHTML = "";
+  mathematicsBank.forEach((q, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${index + 1}. ${q.question} - Correct Answer: ${q.answer}`;
+      correctAnswersList.appendChild(li);
+  });
+  answersPreviewContainer.style.display = "block";
+  resultsContainer.style.display = "none";
+}
+
+// Event listeners
+document.getElementById("submitQuiz").addEventListener("click", handleSubmit);
+document.getElementById("viewAnswers").addEventListener("click", handleViewAnswers);
+
+
+function backToQuiz(){
+  location.reload();
+}
+document.getElementById('onload').addEventListener('click' ,backToQuiz )
+// Load the first set of questions on page load
+loadQuestions(currentPage);
+
+
+// calculator 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.getElementById("toggleCalc");
+  const calculator = document.getElementById("calculator");
+
+  if (toggleButton && calculator) {
+      toggleButton.addEventListener("click", function () {
+          calculator.style.display = (calculator.style.display === "none" || calculator.style.display === "") ? "block" : "none";
+      });
+  } else {
+      console.error("Calculator or toggle button not found in the DOM.");
+  }
+});
+

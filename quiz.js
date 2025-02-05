@@ -164,7 +164,7 @@ const nextBtn = document.getElementById("nextPage");
 const prevBtn = document.getElementById("prevPage");
 const submitQuiz = document.getElementById('submitQuiz')
 let currentPage = 1;
-const questionsPerPage = 10;
+const questionsPerPage = 8;
 
 
 // shuffle the array
@@ -297,3 +297,48 @@ function backToQuiz(){
 document.getElementById('onload').addEventListener('click' ,backToQuiz )
 // Load the first set of questions on page load
 loadQuestions(currentPage);
+
+
+
+
+
+
+// calculator 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.getElementById("toggleCalc");
+  const calculator = document.getElementById("calculator");
+
+  if (toggleButton && calculator) {
+      toggleButton.addEventListener("click", function () {
+          calculator.style.display = (calculator.style.display === "none" || calculator.style.display === "") ? "block" : "none";
+      });
+  } else {
+      console.error("Calculator or toggle button not found in the DOM.");
+  }
+});
+
+
+function appendToDisplay(value) {
+  document.getElementById("calc-display").value += value;
+}
+
+function clearDisplay() {
+  document.getElementById("calc-display").value = "";
+}
+function deleteDisplay() {
+  let display = document.getElementById("calc-display");
+  display.value = display.value.slice(0, -1);
+}
+
+
+function calculateResult() {
+  try {
+      document.getElementById("calc-display").value = eval(document.getElementById("calc-display").value);
+  } catch {
+      document.getElementById("calc-display").value = "Error";
+  }
+}
+
+console.log(document.getElementById("toggleCalc"));  
+console.log(document.getElementById("calculator"));

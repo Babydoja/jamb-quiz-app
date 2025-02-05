@@ -425,7 +425,7 @@ const nextBtn = document.getElementById("nextPage");
 const prevBtn = document.getElementById("prevPage");
 const submitQuiz = document.getElementById('submitQuiz')
 let currentPage = 1;
-const questionsPerPage = 10;
+const questionsPerPage = 8;
 
 // shuffle the array
 function shuffleArray(array) {
