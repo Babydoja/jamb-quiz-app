@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
+    <title>Jamb Quiz App</title>
     <link rel="stylesheet" href="./quiz.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -12,11 +12,11 @@
         <div class="side1">
             <div class="sidebar"> 
                 <ul>
-                    <li><a href="./quiz.html" id="link">Mathematics</a></li>
+                    <li><a href="./math.html" id="link">Mathematics</a></li>
                     <li><a href="./english.html" id="link">English</a></li>
-                    <li><a href="" id="link">Chemistry</a></li>
-                    <li><a href="" id="link">Physics</a></li>
-                    <li><a href="" id="link">Biology</a></li>
+                    <li><a href="./chemistry.html" id="link">Chemistry</a></li>
+                    <li><a href="./physics.html" id="link">Physics</a></li>
+                    <li><a href="./biology.html" id="link">Biology</a></li>
                 </ul>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <div class="middlebar"> 
                 <div><a href="/"><i class="fa-solid fa-house home"></i></a></div>
                 <ul>
-                    <li><a href="./quiz.html" id="links">Mathematics</a></li>
+                    <li><a href="./math.html" id="links">Mathematics</a></li>
                     <li><a href="./english.html" id="links">English</a></li>
                     <li><a href="./chemistry.html" id="links">Chemistry</a></li>
                     <li><a href="./physics.html" id="links">Physics</a></li>
@@ -37,8 +37,8 @@
             <div class="container">
                 <h1 class="contain_h1"> Jamb Cbt English</h1>
                 <div id="quizQuestions"></div>
-                <button id="prevPage" style="display: none;"><i class="fa-solid fa-arrow-left"></i></button>
-                <button id="nextPage"><i class="fa-solid fa-arrow-right"></i></button>
+                <button id="prevPage" style="display: none;">Previous <i class="fa-solid fa-arrow-left"></i></button>
+                <button id="nextPage">Next<i class="fa-solid fa-arrow-right"></i></button>
                 <button id="submitQuiz">Submit</button>
                 <div id="results" style="display: none;">
                     <h2>Your Score: <span id="score"></span> / <span id="totalQuestions"></span></h2>

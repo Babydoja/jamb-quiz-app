@@ -44,6 +44,7 @@ body {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    align-items: center;
 }
 .middlebar{
     display: flex;
@@ -103,13 +104,11 @@ body {
 .inner{
     padding: 0 25px;
 }
-/* calculator  */
 
 /* Style for Calculator Toggle Button */
 .calc-toggle {
     text-align: center;
-    margin-top: 20px;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .calc-toggle i {
@@ -119,75 +118,63 @@ body {
     background: #444;
     border-radius: 50%;
 }
-.write-up{
-    line-height: 40px;
+.hidden {
+    display: none;
 }
-
 /* Style for Calculator */
-/* #calculator {
+#calculator {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 80px;
+    right: 50px;
     width: 250px;
-    background: #333;
     padding: 10px;
     border-radius: 10px;
     display: none;
+    background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-} */
+}
 
 .hidden {
     display: none;
 }
-/* 
+
 #calc-display {
-    width: 100%;
+    width: 90%;
+    height: 40px;
     padding: 10px;
     font-size: 20px;
     text-align: right;
     border: none;
     background: white;
-    margin-bottom: 10px;
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .buttons button {
+    width: 50px;
+    height: 50px;
     padding: 10px;
     font-size: 18px;
     cursor: pointer;
     border: none;
-    background: #555;
+    background: #444;
     color: white;
     border-radius: 5px;
 }
 
 .buttons button:hover {
     background: #777;
-} */
+}
 @media (max-width: 900px) {
     .container {
         grid-template-columns: 1fr;
     }
     .side1, .side3 {
         display: none;
-    }
-}
-@media (max-width: 600px) {
-    .middlebar ul {
-        flex-direction: column;
-        text-align: center;
-        gap:25px;
-        /* flex-wrap: wrap; */
-        /* align-items: center;
-        gap: 15px; */
-    }
-    .middlebar{
-        display: flex;
-        flex-direction: column;
     }
 }

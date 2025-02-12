@@ -1,171 +1,171 @@
 const englishBank = [
     {
       id: 1,
-      question: "What is the synonym of 'benevolent'?",
-      options: ["kind", "cruel", "selfish", "rude"],
-      answer: "kind",
+      question: "choose the option that has the same vowel sound as the one represented by the letters underlined 'Air'",
+      options: ["heir", "her", "hear", "fire"],
+      answer: "heir",
     },
     {
       id: 2,
-      question: "What is the antonym of 'vivid'?",
-      options: ["dull", "bright", "clear", "lively"],
-      answer: "dull",
+      question: "choose the option that has the same consonant sound as the one represented by the letters underlined 'Caliph'",
+      options: ["presently", "perhaps", "powerful", "opponent"],
+      answer: "powerful",
     },
     {
       id: 3,
-      question: "Choose the correct option: He arrived _____ the airport early.",
-      options: ["at", "on", "in", "by"],
-      answer: "at",
+      question: "Select the Word the that has the same pattern of stress as the given word 'ENORMOUS'",
+      options: ["interest", "solution", "stupidly", "character"],
+      answer: "solution",
     },
     {
       id: 4,
-      question: "Which of these words contains a diphthong?",
-      options: ["go", "boy", "cut", "mat"],
+      question: "Identify the word that has the stress on the second syllable?",
+      options: ["reproduce", "always", "result", "understand"],
       answer: "boy",
     },
     {
       id: 5,
-      question: "What is the plural form of 'ox'?",
-      options: ["oxes", "oxen", "oxs", "ox"],
+      question: "Identify the word that has a different stress pattern from the others?",
+      options: ["integral", "intimate", "discourse", "accelerate"],
       answer: "oxen",
     },
     {
       id: 6,
-      question: "What does the idiom 'spill the beans' mean?",
-      options: ["cause trouble", "reveal a secret", "waste money", "cook food"],
-      answer: "reveal a secret",
+      question: "Without our relentless campaigns we might_______sure of victory in the race for the Nathional Assembly?",
+      options: ["never have been", "have never be", "never had been", "be never"],
+      answer: "never have been",
     },
     {
       id: 7,
-      question: "Which word is correctly stressed?",
-      options: ["ex-am-PLE", "EX-am-ple", "ex-AM-ple", "ex-am-ple"],
-      answer: "ex-AM-ple",
+      question: "I like the character that played the role of a political__________at the last convention of our party?",
+      options: ["thorncoat", "torncoat", "turncoat", "turnedcoat"],
+      answer: "turncoat",
     },
     {
       id: 8,
-      question: "What is the synonym of 'diligent'?",
-      options: ["lazy", "hardworking", "careless", "slow"],
-      answer: "hardworking",
+      question: "The team manager told us that the race could only be won by the ________?",
+      options: ["flat-footed", "bare-footed", "swift-footed", "fore-footed"],
+      answer: "swift-footed",
     },
     {
       id: 9,
-      question: "Which sentence is in passive voice?",
-      options: ["She wrote a letter.", "A letter was written by her.", "She is writing a letter.", "She writes letters."],
-      answer: "A letter was written by her.",
+      question: "The new school is not provided with __________for science practicals?",
+      options: ["enough equipment", "equipments", "an equipment", "enough equipments"],
+      answer: "enough equipment",
     },
     {
       id: 10,
-      question: "What is the antonym of 'arrogant'?",
-      options: ["humble", "proud", "confident", "bold"],
-      answer: "humble",
+      question: "You can travel on you own____?",
+      options: ["isn't", "wouldn't you", "can't you", "shouldn't you"],
+      answer: "can't you",
     },
     {
       id: 11,
-      question: "Identify the correctly pronounced word:",
-      options: ["knife (silent k)", "honest (pronounced h)", "write (pronounced w)", "psychology (pronounced p)"],
-      answer: "knife (silent k)",
+      question: "Our culture does not allow one to _____ when an elderly person is speaking",
+      options: ["cut of", "cut off", "cut in", "cut on"],
+      answer: "cut in",
     },
     {
       id: 12,
-      question: "What does the idiom 'under the weather' mean?",
-      options: ["sick", "happy", "angry", "excited"],
-      answer: "sick",
+      question: "If he were here , it could be more fun?",
+      options: ["He didnot show up and so the occasion lacked much fun", "He was being expected to supply more fun", "There was not fun beacuse he was not present", "He was expected but did not show up to liven up the occasion"],
+      answer: "He didnot show up and so the occasion lacked much fun",
     },
     {
       id: 13,
-      question: "What is the plural of 'goose'?",
-      options: ["gooses", "geese", "goosies", "goos"],
-      answer: "geese",
+      question: "Though he is our elected representative he often takes a rather jaundiced view of our problem?",
+      options: ["He takes a rather hazy view of our problems", "He takes an unfavourable position corcerning our problems", "He takes a rather forceful view of our problems", "He takes a sickly view of our problems"],
+      answer: "He takes an unfavourable position corcerning our problems",
     },
     {
       id: 14,
-      question: "Choose the correct sentence:",
-      options: ["She sings good.", "She sings well.", "She sing good.", "She sing well."],
-      answer: "She sings well.",
+      question: "The events of last friday show that there is no love lost between the principal snd the vice principal",
+      options: ["They like eachother", "They work independently", "They cant part company", "They dislike eachother"],
+      answer: "They dislike eachother",
     },
     {
       id: 15,
-      question: "What is the synonym of 'fragile'?",
-      options: ["weak", "strong", "firm", "solid"],
-      answer: "weak",
+      question: "Choose the word nearest in meaning :The Governor told the chief that he was only on a 'routine tour'",
+      options: ["Normal and regular visit", "unplanned encounter", "surprise and impromtu check", "working visit and homage"],
+      answer: "Normal and regular visit",
     },
     {
       id: 16,
-      question: "What is the antonym of 'generous'?",
-      options: ["kind", "selfish", "helpful", "charitable"],
-      answer: "selfish",
+      question: "Choose the word nearest in meaning :The boy was told that he would need SEVERAL more pints of blood if he was to survive?",
+      options: ["many", "much", "some", "plenty"],
+      answer: "many",
     },
     {
       id: 17,
-      question: "What does the idiom 'hit the sack' mean?",
-      options: ["go to bed", "start a fight", "win a game", "buy groceries"],
-      answer: "go to bed",
+      question: "Choose the word nearest in meaning :The principal told the teacher to stop browbeating the children?",
+      options: ["pampering", "bullying", "deceiving", "caning"],
+      answer: "bullying",
     },
     {
       id: 18,
-      question: "Choose the correct option: She is interested _____ learning French.",
-      options: ["on", "in", "at", "by"],
-      answer: "in",
+      question: "Choose the word nearest in meaning : The eassy topic is NEBULOUS",
+      options: ["vague", "incorrect", "distinct", "clear"],
+      answer: "vague",
     },
     {
       id: 19,
-      question: "Identify the correctly pronounced word:",
-      options: ["island (silent s)", "often (pronounced t)", "hour (pronounced h)", "psychic (pronounced p)"],
-      answer: "island (silent s)",
+      question: "Choose the word nearest in meaning : Mr.Okon has been described as an eagle-eyed editor",
+      options: ["a short-sighted", "a clear-sighted", "a long-sighted", "a quick-sighted"],
+      answer: "a clear-sighted",
     },
     {
       id: 20,
-      question: "What does the idiom 'break the ice' mean?",
-      options: ["start a conversation", "destroy something", "make a mistake", "feel cold"],
-      answer: "start a conversation",
+      question: "Choose the word nearest in meaning :I have always believed thst my mother is a very 'IMPASSIONED' woman?",
+      options: ["emotion", "impartial", "impassive", "emotional"],
+      answer: "emotional",
     },
     {
       id: 21,
-      question: "Choose the correct option: The baby was crying _____ the whole night.",
-      options: ["at", "in", "by", "through"],
-      answer: "through",
+      question: "Choose the word nearest in meaning:The party gathering was thrown into a state of 'euphoria' after the electon result was announced",
+      options: ["pleasure", "sadness", "excitement", "confusion"],
+      answer: "excitement",
     },
     {
       id: 22,
-      question: "What is the plural form of 'cactus'?",
-      options: ["cactuses", "cacti", "cactis", "cactus"],
-      answer: "cacti",
+      question: "Choose the word nearest in meaning:The family discussed the crime committed and resolved to 'mail the lie to the counter' ?",
+      options: ["expose it publicly", "bury it in a coffin", "defer action on it", "seek more advice"],
+      answer: "expose it publicly",
     },
     {
       id: 23,
-      question: "What does the idiom 'burn the midnight oil' mean?",
-      options: ["work late", "waste money", "go to bed early", "cook food"],
-      answer: "work late",
+      question: "Choose the word nearest in meaning:My father was at the 'apogee' of his career when he was retired?",
+      options: ["terminal point", "highest point", "Least productive stage", "reductant stage"],
+      answer: "highest point",
     },
     {
       id: 24,
-      question: "What is the synonym of 'elated'?",
-      options: ["happy", "sad", "angry", "tired"],
-      answer: "happy",
+      question: "Choose the word nearest in meaning:The new ruler is 'big-hearted' in his dealing with people?",
+      options: ["generous", "cruel", "soft", "proud"],
+      answer: "generous",
     },
     {
       id: 25,
-      question: "What is the antonym of 'complicated'?",
-      options: ["simple", "difficult", "complex", "confusing"],
-      answer: "simple",
+      question: "Choose the word opposite in meaning:The teacher announced taht the class would be making a 'fleeting' visit to the zoo",
+      options: ["routine", "brief", "long", "guided"],
+      answer: "long",
     },
     {
       id: 26,
-      question: "Which word has a silent letter?",
-      options: ["gnat", "cat", "bat", "hat"],
-      answer: "gnat",
+      question: "Choose the word opposite in meaning:The project is designed to 'alleviate' poverty in the country?",
+      options: ["tackle", "exacerbate", "bat", "hat"],
+      answer: "exacerbate",
     },
     {
       id: 27,
-      question: "What is the synonym of 'courageous'?",
-      options: ["brave", "fearful", "timid", "weak"],
-      answer: "brave",
+      question: "Choose the word opposite in meaning:Civil engineering is 'predominantly' a male profession?",
+      options: ["absolutely", "essentially", "generally", "seldom"],
+      answer: "seldom",
     },
     {
       id: 28,
-      question: "What does the idiom 'bite the bullet' mean?",
-      options: ["endure pain", "eat food", "shoot a gun", "make a mistake"],
-      answer: "endure pain",
+      question: "Choose the word opposite in meaning:The officer said that he knew nothing to the 'detriment' of the applicant?",
+      options: ["damage", "disfavour", "advantage", "background"],
+      answer: "advantage",
     },
     {
       id: 29,
@@ -174,244 +174,202 @@ const englishBank = [
       answer: "criteria",
     },
     {
-      id: 30,
-      question: "What is the antonym of 'transparent'?",
-      options: ["opaque", "clear", "see-through", "glass"],
-      answer: "opaque",
+      "id": 30,
+      "question": "The chairman advised the committee members to put their differences _______ and work as a team.",
+      "options": ["on", "aside", "into", "across"],
+      "answer": "aside"
     },
-  
-        {
-          id: 31,
-          question: "What is the synonym of 'benevolent'?",
-          options: ["Cruel", "Kind", "Selfish", "Harsh"],
-          answer: "Kind",
-        },
-        {
-          id: 32,
-          question: "Choose the correct option: She is _____ university student.",
-          options: ["a", "an", "the", "some"],
-          answer: "a",
-        },
-        {
-          id: 33,
-          question: "What is the antonym of 'diligent'?",
-          options: ["Lazy", "Hardworking", "Industrious", "Persistent"],
-          answer: "Lazy",
-        },
-        {
-          id: 34,
-          question: "Which of these is an example of an idiom?",
-          options: [
-            "The sky is blue.",
-            "She let the cat out of the bag.",
-            "He runs fast.",
-            "Water is wet."
-          ],
-          answer: "She let the cat out of the bag.",
-        },
-        {
-          id: 35,
-          question: "What is the past tense of 'go'?",
-          options: ["Go", "Went", "Gone", "Going"],
-          answer: "Went",
-        },
-        {
-          id: 36,
-          question: "Choose the word that best completes the sentence: 'She is the _____ person I have ever met.'",
-          options: ["More kind", "Most kind", "Kindest", "Kinder"],
-          answer: "Kindest",
-        },
-        {
-          id: 37,
-          question: "What is the correct spelling?",
-          options: ["Recieve", "Receive", "Receeve", "Recievee"],
-          answer: "Receive",
-        },
-        {
-          id: 38,
-          question: "What is the antonym of 'generous'?",
-          options: ["Kind", "Selfish", "Charitable", "Friendly"],
-          answer: "Selfish",
-        },
-        {
-          id: 39,
-          question: "Which of these is an example of oral English?",
-          options: [
-            "Writing a letter",
-            "Speaking in a debate",
-            "Solving a math problem",
-            "Drawing a diagram"
-          ],
-          answer: "Speaking in a debate",
-        },
-        {
-          id: 40,
-          question: "Choose the correct option: 'Neither the boy nor his friends _____ present at the party.'",
-          options: ["was", "were", "is", "are"],
-          answer: "were",
-        },
-        {
-          id: 41,
-          question: "What is the synonym of 'meticulous'?",
-          options: ["Careless", "Careful", "Lazy", "Hasty"],
-          answer: "Careful",
-        },
-        {
-          id: 42,
-          question: "Which of these is a proverb?",
-          options: [
-            "The sun rises in the east.",
-            "A stitch in time saves nine.",
-            "Birds fly in the sky.",
-            "The book is on the table."
-          ],
-          answer: "A stitch in time saves nine.",
-        },
-        {
-          id: 43,
-          question: "What is the correct pronunciation of 'colonel'?",
-          options: ["Co-lo-nel", "Ker-nel", "Col-o-nel", "Cor-o-nel"],
-          answer: "Ker-nel",
-        },
-        {
-          id: 44,
-          question: "Choose the correct option: 'I prefer tea _____ coffee.'",
-          options: ["than", "over", "to", "with"],
-          answer: "to",
-        },
-        {
-          id: 45,
-          question: "What is the plural of 'crisis'?",
-          options: ["Crises", "Crisises", "Crisis", "Crisiseses"],
-          answer: "Crises",
-        },
-        {
-          id: 46,
-          question: "Which of these is an example of a homophone?",
-          options: ["Meet - Meat", "Car - Bike", "Chair - Table", "Run - Walk"],
-          answer: "Meet - Meat",
-        },
-        {
-          id: 47,
-          question: "What is the antonym of 'permanent'?",
-          options: ["Stable", "Temporary", "Fixed", "Enduring"],
-          answer: "Temporary",
-        },
-        {
-          id: 48,
-          question: "What is the correct pronunciation of 'debt'?",
-          options: ["D-bt", "Deb-t", "Det", "De-bee-tee"],
-          answer: "Det",
-        },
-        {
-          id: 49,
-          question: "What does the idiom 'spill the beans' mean?",
-          options: [
-            "To make a mess",
-            "To reveal a secret",
-            "To waste food",
-            "To be clumsy"
-          ],
-          answer: "To reveal a secret",
-        },
-        {
-          id: 50,
-          question: "Which of these is a complete sentence?",
-          options: [
-            "Running in the park.",
-            "She loves reading books.",
-            "Because he was late.",
-            "After the movie."
-          ],
-          answer: "She loves reading books.",
-        },
-        {
-          id: 51,
-          question: "Choose the correct sentence:",
-          options: [
-            "He don't like apples.",
-            "She doesn't like apples.",
-            "They doesn't like apples.",
-            "I doesn't like apples."
-          ],
-          answer: "She doesn't like apples.",
-        },
-        {
-          id: 52,
-          question: "What is the synonym of 'elated'?",
-          options: ["Sad", "Happy", "Angry", "Bored"],
-          answer: "Happy",
-        },
-        {
-          id: 53,
-          question: "What is the plural form of 'analysis'?",
-          options: ["Analysises", "Analyses", "Analysis", "Analyzes"],
-          answer: "Analyses",
-        },
-        {
-          id: 54,
-          question: "Choose the correct sentence:",
-          options: [
-            "Between you and I, this is wrong.",
-            "Between you and me, this is wrong.",
-            "Between me and you, this is wrong.",
-            "Between us, this is wrong."
-          ],
-          answer: "Between you and me, this is wrong.",
-        },
-        {
-          id: 55,
-          question: "What does the idiom 'burn the midnight oil' mean?",
-          options: [
-            "To stay up late working or studying",
-            "To waste time",
-            "To light a lamp",
-            "To get angry"
-          ],
-          answer: "To stay up late working or studying",
-        },
-        {
-          id: 56,
-          question: "What is the antonym of 'humble'?",
-          options: ["Proud", "Kind", "Meek", "Gentle"],
-          answer: "Proud",
-        },
-        {
-          id: 57,
-          question: "What is the correct spelling?",
-          options: ["Tommorow", "Tomorrow", "Tomorow", "Tommorrow"],
-          answer: "Tomorrow",
-        },
-        {
-          id: 58,
-          question: "What does 'a piece of cake' mean in idiomatic expression?",
-          options: [
-            "A delicious dessert",
-            "Something very easy",
-            "Something expensive",
-            "A small portion of food"
-          ],
-          answer: "Something very easy",
-        },
-        {
-          id: 59,
-          question: "Choose the correct sentence:",
-          options: [
-            "She sings good.",
-            "She sings well.",
-            "She sings nice.",
-            "She sings bad."
-          ],
-          answer: "She sings well.",
-        },
-        {
-          id: 60,
-          question: "Which of these words contains a silent letter?",
-          options: ["Knock", "Run", "Ball", "Fix"],
-          answer: "Knock",
-        }
-      
-  ];
+    {
+      "id": 31,
+      "question": "The governor’s speech was **cogent**.",
+      "options": ["Confusing", "Logical", "Unclear", "Weak"],
+      "answer": "Logical"
+    },
+    {
+      "id": 32,
+      "question": "The student was given the **benefit of the doubt**.",
+      "options": ["He was punished unfairly", "He was assumed to be innocent", "He was found guilty", "He was doubted by everyone"],
+      "answer": "He was assumed to be innocent"
+    },
+    {
+      "id": 33,
+      "question": "He promised to **keep an eye on** his little brother.",
+      "options": ["Watch him closely", "Ignore him", "Punish him", "Keep his photo"],
+      "answer": "Watch him closely"
+    },
+    {
+      "id": 34,
+      "question": "Choose the word opposite in meaning to **VINDICATE**:",
+      "options": ["Justify", "Blame", "Approve", "Acknowledge"],
+      "answer": "Blame"
+    },
+    {
+      "id": 35,
+      "question": "Choose the word opposite in meaning to **INSIPID**:",
+      "options": ["Tasteless", "Boring", "Exciting", "Dull"],
+      "answer": "Exciting"
+    },
+    {
+      "id": 36,
+      "question": "Choose the word **nearest in meaning** to **LAMENT**:",
+      "options": ["Celebrate", "Complain", "Mourn", "Rejoice"],
+      "answer": "Mourn"
+    },
+    {
+      "id": 37,
+      "question": "Choose the word **nearest in meaning** to **PERPLEXED**:",
+      "options": ["Confused", "Intelligent", "Relaxed", "Happy"],
+      "answer": "Confused"
+    },
+    {
+      "id": 38,
+      "question": "Scarcely had the teacher entered the class _____ the students started clapping.",
+      "options": ["when", "then", "than", "before"],
+      "answer": "when"
+    },
+    {
+      "id": 39,
+      "question": "Not only _____ the exam but he also won a scholarship.",
+      "options": ["he passed", "he had passed", "did he pass", "does he pass"],
+      "answer": "did he pass"
+    },
+    {
+      "id": 40,
+      "question": "Despite his busy schedule, Dr. Ade always finds time to mentor young doctors. His commitment to the profession is unwavering. What can be inferred from this passage?",
+      "options": ["Dr. Ade is irresponsible", "Dr. Ade dislikes young doctors", "Dr. Ade is dedicated", "Dr. Ade is lazy"],
+      "answer": "Dr. Ade is dedicated"
+    },
+    {
+      "id": 41,
+      "question": "Identify the word that has the **primary stress** on the **first syllable**:",
+      "options": ["develop", "embrace", "difference", "repair"],
+      "answer": "difference"
+    },
+    {
+      "id": 42,
+      "question": "Choose the word that has the **same vowel sound** as the word **'seat'**:",
+      "options": ["Sit", "Beat", "Said", "Set"],
+      "answer": "Beat"
+    },
+    {
+      "id": 43,
+      "question": "Which of these words has the **/ʃ/** sound?",
+      "options": ["Treasure", "Teach", "School", "Ship"],
+      "answer": "Ship"
+    },
+    {
+      "id": 44,
+      "question": "Which of the following correctly completes the sentence? 'Neither James nor his friends _____ present at the meeting.'",
+      "options": ["was", "were", "is", "has been"],
+      "answer": "were"
+    },
+    {
+      "id": 45,
+      "question": "Choose the correct option to complete the sentence: 'The students insisted _____ the teacher explain the topic again.'",
+      "options": ["on that", "that", "for that", "about that"],
+      "answer": "that"
+    },
+    {
+      "id": 46,
+      "question": "The manager insisted that the matter _____ immediately.",
+      "options": ["be attended to", "attended to", "attend to", "is attending"],
+      "answer": "be attended to"
+    },
+    {
+      "id": 47,
+      "question": "The police promised to look _____ the matter thoroughly.",
+      "options": ["up", "down", "into", "on"],
+      "answer": "into"
+    },
+    {
+      "id": 48,
+      "question": "The new policy will take effect _____ next month.",
+      "options": ["since", "from", "on", "at"],
+      "answer": "from"
+    },
+    {
+      "id": 49,
+      "question": "The senator was asked to shed more light _____ his statement.",
+      "options": ["for", "on", "at", "by"],
+      "answer": "on"
+    },
+    {
+      "id": 50,
+      "question": "The court ruled that the evidence was not _____.",
+      "options": ["admissible", "permissible", "credible", "reliable"],
+      "answer": "admissible"
+    },
+    {
+      "id": 51,
+      "question": "The soldiers were praised for their _____ in battle.",
+      "options": ["cowardice", "bravery", "weakness", "hesitation"],
+      "answer": "bravery"
+    },
+    {
+      "id": 52,
+      "question": "The company’s new policy on workplace safety has led to a significant reduction in accidents. What is the main idea of this passage?",
+      "options": ["Accidents have increased", "The new policy is ineffective", "The policy has improved safety", "The company has no safety measures"],
+      "answer": "The policy has improved safety"
+    },
+    {
+      "id": 53,
+      "question": "Choose the word opposite in meaning to **'MOROSE'**:",
+      "options": ["Cheerful", "Sullen", "Gloomy", "Withdrawn"],
+      "answer": "Cheerful"
+  },
+  {
+      "id": 54,
+      "question": "Choose the word that has the **same consonant sound** as the underlined letters in **'PHANTOM'**:",
+      "options": ["Physics", "Hymn", "Phone", "Pneumonia"],
+      "answer": "Phone"
+  },
+  {
+    "id": 55,
+    "question": "Choose the sentence that best answers the question based on the word in **capital letters**: 'Did SHE prefer tea to coffee?'",
+    "options": [
+        "No, HE preferred tea to coffee.",
+        "No, she preferred COFFEE to tea.",
+        "No, she preferred tea to COFFEE.",
+        "No, she prefers tea over coffee."
+    ],
+    "answer": "No, HE preferred tea to coffee."
+  },
+  {
+      "id": 56,
+      "question": "Complete the sentence: 'The boy, together with his parents, _____ at the event yesterday.'",
+      "options": ["were", "was", "have been", "are"],
+      "answer": "was"
+  },
+  {
+    "id": 57,
+    "question": "Which syllable is stressed in the word **'accommodation'**?",
+    "options": [
+        "AC-com-mo-da-tion",
+        "ac-COM-mo-da-tion",
+        "ac-com-MO-da-tion",
+        "ac-com-mo-DA-tion"
+    ],
+    "answer": "ac-com-MO-da-tion"
+  },
+  {
+      "id": 58,
+      "question": "Choose the appropriate option to complete the sentence: 'The principal told the students that no one was above the school's _____ regulations.'",
+      "options": ["laid-down", "lay-down", "laid-out", "laid-off"],
+      "answer": "laid-down"
+  },
+  {
+      "id": 59,
+      "question": "Choose the correct expression: 'If I _____ you, I would apologize immediately.'",
+      "options": ["was", "am", "were", "had been"],
+      "answer": "were"
+  },
+  {
+      "id": 60,
+      "question": "Choose the correct option to complete the sentence: 'She was so tired that she could hardly _____ her eyes open.'",
+      "options": ["keep", "kept", "keeps", "keeping"],
+      "answer": "keep"
+  }
+];
   
 
 
@@ -427,16 +385,14 @@ const submitQuiz = document.getElementById('submitQuiz')
 let currentPage = 1;
 const questionsPerPage = 8;
 
-// shuffle the array
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      [array[i], array[j]] = [array[j], array[i]]; 
     }
   }
-// Function to load paginated questions
 function loadQuestions(page) {
-    quizContainer.innerHTML = ""; // Clear previous questions
+    quizContainer.innerHTML = ""; 
     shuffleArray(englishBank)
 
     let startIndex = (page - 1) * questionsPerPage;
@@ -477,12 +433,10 @@ function loadQuestions(page) {
         quizContainer.appendChild(questionDiv);
     });
 
-    // Disable/Enable navigation buttons
     prevBtn.style.display = page === 1 ? "none" : "inline-block";
     nextBtn.style.display = endIndex >= englishBank.length ? "none" : "inline-block";
 }
 
-// Handle quiz submission
 function handleSubmit() {
     let score = 0;
     englishBank.forEach((q, index) => {
@@ -497,7 +451,6 @@ function handleSubmit() {
     resultsContainer.style.display = "block";
 }
 
-// Pagination event listeners
 nextBtn.addEventListener("click", () => {
     currentPage++;
     loadQuestions(currentPage);
@@ -509,7 +462,6 @@ prevBtn.addEventListener("click", () => {
 });
 
 
-// Handle quiz submission
 function handleSubmit() {
     let score = 0;
     englishBank.forEach((q, index) => {
@@ -521,7 +473,6 @@ function handleSubmit() {
         }
     });
 
-    // Display score
     scoreDisplay.textContent = score;
     totalQuestionsDisplay.textContent = englishBank.length;
     resultsContainer.style.display = "block";
@@ -533,7 +484,6 @@ function handleSubmit() {
 
 }
 
-// Handle view correct answers
 function handleViewAnswers() {
     correctAnswersList.innerHTML = "";
     englishBank.forEach((q, index) => {
@@ -545,7 +495,6 @@ function handleViewAnswers() {
     resultsContainer.style.display = "none";
 }
 
-// Event listeners
 document.getElementById("submitQuiz").addEventListener("click", handleSubmit);
 document.getElementById("viewAnswers").addEventListener("click", handleViewAnswers);
 
@@ -554,5 +503,4 @@ function backToQuiz(){
     location.reload();
 }
 document.getElementById('onload').addEventListener('click' ,backToQuiz )
-// Load the first set of questions on page load
 loadQuestions(currentPage);

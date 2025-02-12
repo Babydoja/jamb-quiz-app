@@ -238,6 +238,66 @@ const physicsBank = [
     question: "What is the force responsible for holding atoms together in a molecule?",
     options: ["Gravitational force", "Electromagnetic force", "Weak nuclear force", "Strong nuclear force"],
     answer: "Electromagnetic force",
+  },
+  {
+    id: 41,
+    question: "What quatity which  requires magnitude and direction to be specified?",
+    options: ["Displacement", "Distance", "Mass", "Temperature"],
+    answer: "Displacement",
+  },
+  {
+    id: 42,
+    question: "In order to remove error of parallax when taking measurements with meter rule , the eye should be focused?",
+    options: ["Slantingly towards the left on the markings", "Slantingly towards the right on the markings", "Vertically downwards on the markings", "vertically upwards on the markings"],
+    answer: "Vertically downwards on the markings",
+  },
+  {
+    id: 43,
+    question: "The internationally agreed system of units(SI) for physical measurement are?",
+    options: ["Ib,ft,sec", "g,m,sec", "kg,m,sec", "cm,g,sec"],
+    answer: "kg,m,sec",
+  },
+  {
+    "id": 44,
+    "question": "Which of the following factors does not affect the period of a simple pendulum?",
+    "options": ["Length of the string", "Acceleration due to gravity", "Mass of the bob", "Amplitude of oscillation"],
+    "answer": "Mass of the bob"
+  },
+  {
+    "id": 45,
+    "question": "A force of 10N is applied to a body of mass 2kg. What is the acceleration of the body?",
+    "options": ["5 m/s²", "20 m/s²", "10 m/s²", "2 m/s²"],
+    "answer": "5 m/s²"
+  },
+  {
+    "id": 46,
+    "question": "What is the work done when a force of 20N moves an object through a distance of 5m in the direction of the force?",
+    "options": ["100 J", "25 J", "4 J", "10 J"],
+    "answer": "100 J"
+  },
+  {
+    "id": 47,
+    "question": "Which of the following substances is the best conductor of electricity?",
+    "options": ["Glass", "Copper", "Rubber", "Wood"],
+    "answer": "Copper"
+  },
+  {
+    "id": 48,
+    "question": "Which of the following is a characteristic of longitudinal waves?",
+    "options": ["They require a medium to propagate", "They can travel in a vacuum", "They are transverse in nature", "They do not transfer energy"],
+    "answer": "They require a medium to propagate"
+  },
+  {
+    "id": 49,
+    "question": "An object is placed 12 cm in front of a concave mirror with a focal length of 6 cm. What is the nature of the image formed?",
+    "options": ["Real and inverted", "Virtual and upright", "Real and upright", "Virtual and inverted"],
+    "answer": "Real and inverted"
+  },
+  {
+    "id": 50,
+    "question": "The velocity ratio of a machine is defined as?",
+    "options": ["The ratio of the effort to the load", "The ratio of the load to the effort", "The ratio of distance moved by effort to distance moved by load", "The product of force and displacement"],
+    "answer": "The ratio of distance moved by effort to distance moved by load"
   }
 ];
 
@@ -255,17 +315,15 @@ let currentPage = 1;
 const questionsPerPage = 8;
 
 
-// shuffle the array
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    [array[i], array[j]] = [array[j], array[i]]; 
   }
 }
 
-// Function to load paginated questions
 function loadQuestions(page) {
-  quizContainer.innerHTML = ""; // Clear previous questions
+  quizContainer.innerHTML = "";
   shuffleArray(physicsBank)
 
   let startIndex = (page - 1) * questionsPerPage;
@@ -285,7 +343,7 @@ function loadQuestions(page) {
           optionContainer.classList.add("option");
 
           const label = document.createElement("label");
-          label.textContent = `${String.fromCharCode(65 + optIndex)} `; // A, B, C, D
+          label.textContent = `${String.fromCharCode(65 + optIndex)} `; 
           label.style.fontWeight = "bold";
 
           const radioInput = document.createElement("input");
@@ -306,12 +364,10 @@ function loadQuestions(page) {
       quizContainer.appendChild(questionDiv);
   });
 
-  // Disable/Enable navigation buttons
   prevBtn.style.display = page === 1 ? "none" : "inline-block";
   nextBtn.style.display = endIndex >= physicsBank.length ? "none" : "inline-block";
 }
 
-// Handle quiz submission
 function handleSubmit() {
   let score = 0;
   physicsBank.forEach((q, index) => {
@@ -326,7 +382,6 @@ function handleSubmit() {
   resultsContainer.style.display = "block";
 }
 
-// Pagination event listeners
 nextBtn.addEventListener("click", () => {
   currentPage++;
   loadQuestions(currentPage);
@@ -338,7 +393,6 @@ prevBtn.addEventListener("click", () => {
 });
 
 
-// Handle quiz submission
 function handleSubmit() {
   let score = 0;
   physicsBank.forEach((q, index) => {
@@ -350,7 +404,6 @@ function handleSubmit() {
       }
   });
 
-  // Display score
   scoreDisplay.textContent = score;
   totalQuestionsDisplay.textContent = physicsBank.length;
   resultsContainer.style.display = "block";
@@ -362,7 +415,6 @@ function handleSubmit() {
 
 }
 
-// Handle view correct answers
 function handleViewAnswers() {
   correctAnswersList.innerHTML = "";
   physicsBank.forEach((q, index) => {
@@ -374,7 +426,6 @@ function handleViewAnswers() {
   resultsContainer.style.display = "none";
 }
 
-// Event listeners
 document.getElementById("submitQuiz").addEventListener("click", handleSubmit);
 document.getElementById("viewAnswers").addEventListener("click", handleViewAnswers);
 
@@ -383,5 +434,4 @@ function backToQuiz(){
   location.reload();
 }
 document.getElementById('onload').addEventListener('click' ,backToQuiz )
-// Load the first set of questions on page load
 loadQuestions(currentPage);

@@ -10,16 +10,16 @@
 <body>
     <div class="containers">
         <div class="side1">
-            <div class="calc-toggle">
+            <!-- <div class="calc-toggle">
                 <i class="fa-solid fa-calculator" id="toggleCalc"></i>
-            </div>
+            </div> -->
             <div class="sidebar"> 
                 <ul>
-                    <li><a href="./quiz.html" id="link">Mathematics</a></li>
+                    <li><a href="./math.html" id="link">Mathematics</a></li>
                     <li><a href="./english.html" id="link">English</a></li>
-                    <li><a href="" id="link">Chemistry</a></li>
-                    <li><a href="" id="link">Physics</a></li>
-                    <li><a href="" id="link">Biology</a></li>
+                    <li><a href="./chemistry.html" id="link">Chemistry</a></li>
+                    <li><a href="./physics.html" id="link">Physics</a></li>
+                    <li><a href="./biology.html" id="link">Biology</a></li>
                 </ul>
             </div>
         </div>
@@ -30,19 +30,22 @@
             <div class="middlebar"> 
                 <div><a href="/"><i class="fa-solid fa-house home"></i></a></div>
                 <ul>
-                    <li><a href="./quiz.html" id="links">Mathematics</a></li>
+                    <li><a href="./math.html" id="links">Mathematics</a></li>
                     <li><a href="./english.html" id="links">English</a></li>
                     <li><a href="./chemistry.html" id="links">Chemistry</a></li>
                     <li><a href="./physics.html" id="links">Physics</a></li>
                     <li><a href="./biology.html" id="links">Biology</a></li>
                 </ul>
+                <!-- <div class="calc-toggle">
+                    <i class="fa-solid fa-calculator" id="toggleCalc"></i>
+                </div> -->
             </div>
             
             <div class="container">
                 <h1 class="contain_h1"> Jamb Cbt Mathematics</h1>
                 <div id="quizQuestions"></div>
-                <button id="prevPage" style="display: none;"><i class="fa-solid fa-arrow-left"></i></button>
-                <button id="nextPage"><i class="fa-solid fa-arrow-right"></i></button>
+                <button id="prevPage" style="display: none;">Previous <i class="fa-solid fa-arrow-left"></i></button>
+                <button id="nextPage">Next<i class="fa-solid fa-arrow-right"></i></button>
                 <button id="submitQuiz">Submit</button>
                 <div id="results" style="display: none;">
                     <h2>Your Score: <span id="score"></span> / <span id="totalQuestions"></span></h2>
@@ -99,6 +102,6 @@
             <button onclick="appendToDisplay('0')">00</button>
         </div>
     </div>
-    <script src="./quiz.js"></script>
+    <script src="./math.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
+    <title>Jamb Quiz App</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -12,7 +12,7 @@
         <div class="side1">
             <div class="sidebar"> 
                 <ul>
-                    <li><a href="./quiz.html" id="link">Mathematics</a></li>
+                    <li><a href="./math.html" id="link">Mathematics</a></li>
                     <li><a href="./english.html" id="link">English</a></li>
                     <li><a href="./chemistry.html" id="link">Chemistry</a></li>
                     <li><a href="./physics.html" id="link">Physics</a></li>
@@ -27,12 +27,15 @@
             <div class="middlebar"> 
                 <div><a href="/"><i class="fa-solid fa-house home"></i></a></div>
                 <ul>
-                    <li><a href="./quiz.html" id="links">Mathematics</a></li>
+                    <li><a href="./math.html" id="links">Mathematics</a></li>
                     <li><a href="./english.html" id="links">English</a></li>
                     <li><a href="./chemistry.html" id="links">Chemistry</a></li>
                     <li><a href="./physics.html" id="links">Physics</a></li>
                     <li><a href="./biology.html" id="links">Biology</a></li>
                 </ul>
+                <!-- <div class="calc-toggle">
+                    <i class="fa-solid fa-calculator" id="toggleCalc"></i>
+                </div> -->
             </div>
             <div class="inner">
                 <h1 class="up">Jamb-up, your best Jamb guide</h1>
@@ -52,8 +55,33 @@
                     <li><a href="" id="link">Goverment</a></li>
                     <li><a href="" id="link">History</a></li>
                 </ul>
-                <!-- Calculator Toggle Button -->
             </div>
+        </div>
+    </div>
+
+    <div id="calculator" class="hidden">
+        <input type="text" id="calc-display" disabled>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="deleteDisplay()">Del</button>
+            <button onclick="appendToDisplay('0')">00</button>
+            <button onclick="appendToDisplay('0')">00</button>
         </div>
     </div>
     

@@ -238,6 +238,66 @@ const biologyBank = [
     question: "What is the main source of energy for living organisms?",
     options: ["Sunlight", "Water", "Oxygen", "Carbon dioxide"],
     answer: "Sunlight",
+  },
+  {
+    "id": 41,
+    "question": "Which part of the cell is responsible for controlling its activities?",
+    "options": ["Mitochondria", "Nucleus", "Ribosome", "Cell membrane"],
+    "answer": "Nucleus"
+  },
+  {
+    "id":42,
+    "question": "Which type of reproduction involves only one parent?",
+    "options": ["Asexual reproduction", "Sexual reproduction", "Internal fertilization", "External fertilization"],
+    "answer": "Asexual reproduction"
+  },
+  {
+    "id": 43,
+    "question": "Which organ in the human body produces insulin?",
+    "options": ["Liver", "Pancreas", "Kidney", "Stomach"],
+    "answer": "Pancreas"
+  },
+  {
+    "id": 44,
+    "question": "Which process is responsible for the movement of water from the roots to the leaves of plants?",
+    "options": ["Osmosis", "Diffusion", "Transpiration", "Respiration"],
+    "answer": "Transpiration"
+  },
+  {
+    "id": 45,
+    "question": "Which of the following blood vessels carries oxygenated blood away from the heart?",
+    "options": ["Veins", "Arteries", "Capillaries", "Lymphatic vessels"],
+    "answer": "Arteries"
+  },
+  {
+    "id": 46,
+    "question": "What is the major excretory organ in humans?",
+    "options": ["Lungs", "Skin", "Kidney", "Liver"],
+    "answer": "Kidney"
+  },
+  {
+    "id": 47,
+    "question": "Which component of blood is responsible for clotting?",
+    "options": ["Red blood cells", "White blood cells", "Platelets", "Plasma"],
+    "answer": "Platelets"
+  },
+  {
+    "id": 48,
+    "question": "What is the name of the pigment responsible for photosynthesis in plants?",
+    "options": ["Chlorophyll", "Carotene", "Haemoglobin", "Melanin"],
+    "answer": "Chlorophyll"
+  },
+  {
+    "id": 49,
+    "question": "Which part of the human brain controls balance and coordination?",
+    "options": ["Cerebrum", "Cerebellum", "Medulla oblongata", "Hypothalamus"],
+    "answer": "Cerebellum"
+  },
+  {
+    "id": 50,
+    "question": "What is the term for the movement of molecules from a region of higher concentration to a region of lower concentration?",
+    "options": ["Osmosis", "Active transport", "Diffusion", "Respiration"],
+    "answer": "Diffusion"
   }
 ];
 
@@ -255,65 +315,18 @@ const submitQuiz = document.getElementById('submitQuiz')
 let currentPage = 1;
 const questionsPerPage = 10;
 
-// Function to load paginated questions
-// function loadQuestions(page) {
-//   quizContainer.innerHTML = ""; // Clear previous questions
 
-//   let startIndex = (page - 1) * questionsPerPage;
-//   let endIndex = startIndex + questionsPerPage;
-//   let paginatedQuestions = biologyBank.slice(startIndex, endIndex);
-
-//   paginatedQuestions.forEach((q, index) => {
-//       const questionDiv = document.createElement("div");
-//       questionDiv.classList.add("question");
-
-//       const questionText = document.createElement("h3");
-//       questionText.textContent = `${startIndex + index + 1}. ${q.question}`;
-//       questionDiv.appendChild(questionText);
-
-//       q.options.forEach((option, optIndex) => {
-//           const optionContainer = document.createElement("div");
-//           optionContainer.classList.add("option");
-
-//           const label = document.createElement("label");
-//           label.textContent = `${String.fromCharCode(65 + optIndex)} `; // A, B, C, D
-//           label.style.fontWeight = "bold";
-
-//           const radioInput = document.createElement("input");
-//           radioInput.type = "radio";
-//           radioInput.name = `question${startIndex + index}`;
-//           radioInput.value = option;
-//           radioInput.id = `q${startIndex + index}opt${optIndex}`;
-
-//           const optionText = document.createElement("span");
-//           optionText.textContent = ` ${option}`;
-
-//           optionContainer.appendChild(label);
-//           optionContainer.appendChild(radioInput);
-//           optionContainer.appendChild(optionText);
-//           questionDiv.appendChild(optionContainer);
-//       });
-
-//       quizContainer.appendChild(questionDiv);
-//   });
-
-//   // Disable/Enable navigation buttons
-//   prevBtn.style.display = page === 1 ? "none" : "inline-block";
-//   nextBtn.style.display = endIndex >= biologyBank.length ? "none" : "inline-block";
-// }
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    [array[i], array[j]] = [array[j], array[i]]; 
   }
 }
 
 // Function to load paginated questions
 function loadQuestions(page) {
-  quizContainer.innerHTML = ""; // Clear previous questions
-
-  // Shuffle the questions array before paginating
+  quizContainer.innerHTML = "";
   shuffleArray(biologyBank);
 
   let startIndex = (page - 1) * questionsPerPage;
@@ -353,19 +366,9 @@ function loadQuestions(page) {
 
       quizContainer.appendChild(questionDiv);
   });
-
-  // Disable/Enable navigation buttons
   prevBtn.style.display = page === 1 ? "none" : "inline-block";
   nextBtn.style.display = endIndex >= biologyBank.length ? "none" : "inline-block";
 }
-
-// Event listeners for pagination
-// nextBtn.addEventListener("click", () => {
-//   currentPage++;
-//   loadQuestions(currentPage);
-// });
-
-// Handle quiz submission
 function handleSubmit() {
   let score = 0;
   biologyBank.forEach((q, index) => {
@@ -385,7 +388,6 @@ function handleSubmit() {
   answersPreviewContainer.style.display = "none";
 }
 
-// Pagination event listeners
 nextBtn.addEventListener("click", () => {
   currentPage++;
   loadQuestions(currentPage);
@@ -417,5 +419,4 @@ function backToQuiz(){
   location.reload();
 }
 document.getElementById('onload').addEventListener('click' ,backToQuiz )
-// Load the first set of questions on page load
 loadQuestions(currentPage);

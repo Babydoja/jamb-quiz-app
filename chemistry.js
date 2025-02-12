@@ -232,6 +232,78 @@ const chemistryBank = [
         options: ["0", "7", "14", "1"],
         answer: "7",
       },
+      {
+        "id": 39,
+        "question": "Which of the following is used as a drying agent?",
+        "options": ["HCl", "H₂O", "CaCl₂", "NH₃"],
+        "answer": "CaCl₂"
+      },
+      {
+        "id": 40,
+        "question": "Which element is found in all organic compounds?",
+        "options": ["Oxygen", "Hydrogen", "Carbon", "Nitrogen"],
+        "answer": "Carbon"
+      },
+      {
+        "id": 41,
+        "question": "What is the chemical formula of sulfuric acid?",
+        "options": ["HCl", "H₂SO₄", "HNO₃", "H₂CO₃"],
+        "answer": "H₂SO₄"
+      },
+      {
+        "id": 42,
+        "question": "Which type of chemical reaction involves the loss of electrons?",
+        "options": ["Reduction", "Oxidation", "Neutralization", "Hydrolysis"],
+        "answer": "Oxidation"
+      },
+      {
+        "id": 43,
+        "question": "Which of the following metals reacts with cold water?",
+        "options": ["Copper", "Iron", "Sodium", "Lead"],
+        "answer": "Sodium"
+      },
+      {
+        "id": 44,
+        "question": "What is the oxidation number of oxygen in most compounds?",
+        "options": ["+1", "-1", "+2", "-2"],
+        "answer": "-2"
+      },
+      {
+        "id": 45,
+        "question": "Which of these gases is used in fire extinguishers?",
+        "options": ["Oxygen", "Carbon dioxide", "Hydrogen", "Nitrogen"],
+        "answer": "Carbon dioxide"
+      },
+      {
+        "id": 46,
+        "question": "What is the main constituent of natural gas?",
+        "options": ["Methane", "Ethane", "Propane", "Butane"],
+        "answer": "Methane"
+      },
+      {
+        "id": 47,
+        "question": "Which of the following can be used to detect the presence of starch?",
+        "options": ["Benedict's solution", "Iodine solution", "Litmus paper", "Fehling's solution"],
+        "answer": "Iodine solution"
+      },
+      {
+        "id": 48,
+        "question": "What is the common name for calcium hydroxide?",
+        "options": ["Slaked lime", "Quick lime", "Limestone", "Caustic soda"],
+        "answer": "Slaked lime"
+      },
+      {
+        "id": 49,
+        "question": "Which of these is a common alloy?",
+        "options": ["Copper", "Steel", "Aluminum", "Sulfur"],
+        "answer": "Steel"
+      },
+      {
+        "id": 50,
+        "question": "Which separation technique is used to obtain pure water from seawater?",
+        "options": ["Filtration", "Decantation", "Distillation", "Crystallization"],
+        "answer": "Distillation"
+      }
 ];
 
 
@@ -248,18 +320,15 @@ const submitQuiz = document.getElementById('submitQuiz')
 let currentPage = 1;
 const questionsPerPage = 10;
 
-
-// shiffing the arrray
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    [array[i], array[j]] = [array[j], array[i]]; 
   }
 }
 
-// Function to load paginated questions
 function loadQuestions(page) {
-  quizContainer.innerHTML = ""; // Clear previous questions
+  quizContainer.innerHTML = "";
   shuffleArray(chemistryBank)
 
   let startIndex = (page - 1) * questionsPerPage;
@@ -299,13 +368,11 @@ function loadQuestions(page) {
 
       quizContainer.appendChild(questionDiv);
   });
-
-  // Disable/Enable navigation buttons
   prevBtn.style.display = page === 1 ? "none" : "inline-block";
   nextBtn.style.display = endIndex >= chemistryBank.length ? "none" : "inline-block";
 }
 
-// Handle quiz submission
+
 function handleSubmit() {
   let score = 0;
   chemistryBank.forEach((q, index) => {
@@ -320,7 +387,6 @@ function handleSubmit() {
   resultsContainer.style.display = "block";
 }
 
-// Pagination event listeners
 nextBtn.addEventListener("click", () => {
   currentPage++;
   loadQuestions(currentPage);
@@ -332,7 +398,6 @@ prevBtn.addEventListener("click", () => {
 });
 
 
-// Handle quiz submission
 function handleSubmit() {
   let score = 0;
   chemistryBank.forEach((q, index) => {
@@ -344,7 +409,6 @@ function handleSubmit() {
       }
   });
 
-  // Display score
   scoreDisplay.textContent = score;
   totalQuestionsDisplay.textContent = chemistryBank.length;
   resultsContainer.style.display = "block";
@@ -356,7 +420,6 @@ function handleSubmit() {
 
 }
 
-// Handle view correct answers
 function handleViewAnswers() {
   correctAnswersList.innerHTML = "";
   chemistryBank.forEach((q, index) => {
@@ -368,7 +431,6 @@ function handleViewAnswers() {
   resultsContainer.style.display = "none";
 }
 
-// Event listeners
 document.getElementById("submitQuiz").addEventListener("click", handleSubmit);
 document.getElementById("viewAnswers").addEventListener("click", handleViewAnswers);
 
@@ -377,5 +439,4 @@ function backToQuiz(){
   location.reload();
 }
 document.getElementById('onload').addEventListener('click' ,backToQuiz )
-// Load the first set of questions on page load
 loadQuestions(currentPage);
