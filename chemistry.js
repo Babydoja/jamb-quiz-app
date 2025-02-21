@@ -221,7 +221,7 @@ const chemistryBank = [
     answer: "Citric acid",
   },
   {
-   id: 37,
+        id: 37,
         question: "What is the chemical symbol for gold?",
         options: ["Au", "Ag", "Fe", "Cu"],
         answer: "Au",
@@ -308,6 +308,7 @@ const chemistryBank = [
 
 
 
+
 const quizContainer = document.getElementById("quizQuestions");
 const resultsContainer = document.getElementById("results");
 const answersPreviewContainer = document.getElementById("answersPreview");
@@ -320,6 +321,8 @@ const submitQuiz = document.getElementById('submitQuiz')
 let currentPage = 1;
 const questionsPerPage = 10;
 
+
+
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -327,9 +330,10 @@ function shuffleArray(array) {
   }
 }
 
+// Function to load paginated questions
 function loadQuestions(page) {
   quizContainer.innerHTML = "";
-  shuffleArray(chemistryBank)
+  shuffleArray(chemistryBank);
 
   let startIndex = (page - 1) * questionsPerPage;
   let endIndex = startIndex + questionsPerPage;
@@ -371,39 +375,10 @@ function loadQuestions(page) {
   prevBtn.style.display = page === 1 ? "none" : "inline-block";
   nextBtn.style.display = endIndex >= chemistryBank.length ? "none" : "inline-block";
 }
-
-
 function handleSubmit() {
   let score = 0;
   chemistryBank.forEach((q, index) => {
       const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-      if (selectedOption && selectedOption.value === q.answer) {
-          score++;
-      }
-  });
-
-  scoreDisplay.textContent = score;
-  totalQuestionsDisplay.textContent = chemistryBank.length;
-  resultsContainer.style.display = "block";
-}
-
-nextBtn.addEventListener("click", () => {
-  currentPage++;
-  loadQuestions(currentPage);
-});
-
-prevBtn.addEventListener("click", () => {
-  currentPage--;
-  loadQuestions(currentPage);
-});
-
-
-function handleSubmit() {
-  let score = 0;
-  chemistryBank.forEach((q, index) => {
-      const selectedOption = document.querySelector(
-          `input[name="question${index}"]:checked`
-      );
       if (selectedOption && selectedOption.value === q.answer) {
           score++;
       }
@@ -417,8 +392,18 @@ function handleSubmit() {
   prevBtn.style.display = 'none'
   submitQuiz.style.display = 'none'
   answersPreviewContainer.style.display = "none";
-
 }
+
+nextBtn.addEventListener("click", () => {
+  currentPage++;
+  loadQuestions(currentPage);
+});
+
+prevBtn.addEventListener("click", () => {
+  currentPage--;
+  loadQuestions(currentPage);
+});
+
 
 function handleViewAnswers() {
   correctAnswersList.innerHTML = "";
@@ -431,6 +416,7 @@ function handleViewAnswers() {
   resultsContainer.style.display = "none";
 }
 
+// Event listeners
 document.getElementById("submitQuiz").addEventListener("click", handleSubmit);
 document.getElementById("viewAnswers").addEventListener("click", handleViewAnswers);
 

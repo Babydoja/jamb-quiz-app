@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", serif;
     background-color: #f4f4f4;
 }
 *{
@@ -89,17 +89,27 @@ h3 {
     flex-direction: column;
     gap: 20px;
 }
-.middlebar ul{
-    padding: 20px 0;
+.middlebar ul {
+    padding:5px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-}
-.middlebar{
-    display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 2px;
+}
+.middlebar ul li {
+    flex: 1 1 auto;
+    margin: 12px 0;
+    text-align: center;
+}
+.middlebar {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
     justify-content: center;
+    align-items: center;
+    max-width: 100%; 
+    padding: 2px;
     margin-top: 10px;
 }
 .contain_h1{
@@ -144,6 +154,13 @@ h3 {
     border-right: 5px solid blue;
     border-radius: 2px;
     transition: 0.3s ease-in-out;
+}
+#onload{
+    border: 1px solid rgba(0, 0, 0, 0.487);
+    background-color: #0DC026;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
 }
 
 .sidebar ul li #link:hover {
@@ -230,17 +247,49 @@ h3 {
     border-radius: 5px;
     color: white;
 }
-/* Responsive Design */
-@media (max-width: 300px) {
-    .calculator {
-        width: 100%;
-    }
-
-    button {
-        font-size: 16px;
-        height: 45px;
-    }
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    color: white;
+    gap: 10px;
+    z-index: 999999;
 }
+.info button{
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 100%;
+}
+.icon{
+    font-size: 40px;
+    color: #0DC026;
+}
+.infop{
+    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 8px;
+    color: black;
+}
+.frameguide {
+    border: 4px solid rgba(0, 0, 0, 0.434);
+    width: 160px;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.frameguide img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
 
 @media screen and (max-width: 1024px) {
     .containers {
@@ -248,22 +297,47 @@ h3 {
     }
     .sidebar ul {
         padding-top: 30px;
-        gap: 15px;
+        gap: 10px;
     }
 }
+
 @media screen and (max-width: 768px) {
     .containers {
         grid-template-columns: 1fr;
     }
-    .side1,.side3 {
+    .side1, .side3 {
         display: none;
     }
     .quiz-container {
         padding: 15px;
     }
+    .middlebar {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
 }
+
 @media screen and (max-width: 480px) {
+    .quiz-container {
+        padding: 10px;
+    }
     button {
-        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+    .middlebar {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}
+
+/* Adjust calculator for small screens */
+@media (max-width: 480px) {
+    #calculator {
+        width: 90%;
+        bottom: 20px;
+        right: 10px;
     }
 }
