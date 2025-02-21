@@ -46,10 +46,9 @@ body {
 .middlebar ul {
     padding:5px 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 2px;
+    gap: 10px;
 }
 .middlebar ul li {
     flex: 1 1 auto;
