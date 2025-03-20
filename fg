@@ -318,7 +318,6 @@ const nextBtn = document.getElementById("nextPage");
 const prevBtn = document.getElementById("prevPage");
 const submitQuiz = document.getElementById("submitQuiz");
 
-
 let userAnswersList = []
 
 let userAnswers = {};
@@ -342,6 +341,7 @@ function loadQuestions(page) {
   const startIndex = (page - 1) * questionsPerPage;
   const endIndex = startIndex + questionsPerPage;
 
+  
   const questionsToShow = shuffledQuestions
     .slice()
     .sort((a, b) => a.id - b.id)
@@ -368,17 +368,19 @@ function loadQuestions(page) {
       optionContainer.appendChild(label);
       questionElement.appendChild(optionContainer);
     });
+    
+    
 
     quizContainer.appendChild(questionElement);
   });
-  prevBtn.style.display = page > 1 ? "inline-block" : "none"; 
-  nextBtn.style.display = endIndex < shuffledQuestions.length ? "inline-block" : "none"; 
+  prevBtn.disabled = page === 1 
+  nextBtn.disabled = page * questionsPerPage >= shuffledQuestions.length 
 }
 
 
 
+
 // Pagination handlers
-// next button
 nextBtn.addEventListener("click", () => {
   if (currentPage * questionsPerPage < shuffledQuestions.length) {
     currentPage++;
@@ -386,7 +388,6 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-// prev button
 prevBtn.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
@@ -421,40 +422,27 @@ submitQuiz.addEventListener("click", () => {
 
 
 
-// function to preview answers
-function handleViewAnswers() {
-  correctAnswersList.innerHTML = "";
-  shuffledQuestions.forEach((q, index) => {
-    const li = document.createElement("li");
-    li.textContent = `${index + 1}. ${q.question} - Correct Answer: ${q.answer}`;
-    correctAnswersList.appendChild(li);
-  });
-
-  answersPreviewContainer.style.display = "block";
-  resultsContainer.style.display = "none";
-  quizContainer.style.display = "none"; 
-  nextBtn.style.display = "none";
-  prevBtn.style.display = "none";
-  submitQuiz.style.display = "none";
+function handleViewAnswers(){
+    correctAnswersList.innerHTML = "";
+    shuffledQuestions.forEach((q, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${index + 1}. ${q.question} - Correct Answer: ${q.answer}`;
+      correctAnswersList.appendChild(li);
+    });
+    answersPreviewContainer.style.display = "block";
+    resultsContainer.style.display = "none";
 }
 
-document.getElementById("viewAnswers").addEventListener("click", handleViewAnswers);
-
-// reload the quiz 
-function backToQuiz(){
-  location.reload();
-}
-document.getElementById('onload').addEventListener('click' ,backToQuiz )
 
 // Initialize quiz
 shuffleArray(shuffledQuestions);
 loadQuestions(currentPage);
 
-// function for selecting each subject
+
+
 document.getElementById("subjectSelect").addEventListener("change", function() {
   const selectedValue = this.value;
   if (selectedValue) {
       window.location.href = selectedValue;
   }
 });
-

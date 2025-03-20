@@ -35,17 +35,23 @@
                 <div><a href="/"><i class="fa-solid fa-house home"></i></a></div>
                 <ul>
                     <li><a href="math.html" id="links">Mathematics</a></li>
-                    <li><a href="./english.html" id="links">English</a></li>
-                    <li><a href="./chemistry.html" id="links">Chemistry</a></li>
-                    <li><a href="./physics.html" id="links">Physics</a></li>
-                    <li><a href="./biology.html" id="links">Biology</a></li>
+                    <!-- <li><a href="english.html" id="links">English</a></li> -->
+                    <li>
+                        <select id="subjectSelect" class="links">
+                            <option value="">Select a subject</option>
+                            <option value="english.html">English</option>
+                            <option value="chemistry.html">Chemistry</option>
+                            <option value="physics.html">Physics</option>
+                            <option value="biology.html">Biology</option>
+                        </select>
+                    </li>
                 </ul>
             </div>
             <div class="container">
                 <h1 class="contain_h1"> Jamb CBT Chemistry</h1>
                 <div id="quizQuestions"></div>
-                <button id="prevPage" style="display: none;">Previous<i class="fa-solid fa-arrow-left"></i></button>
-                <button id="nextPage">Next<i class="fa-solid fa-arrow-right"></i></button>
+                <button id="prevPage" style="display: none;">Previous  <i class="fa-solid fa-arrow-left"></i></button>
+                <button id="nextPage">Next  <i class="fa-solid fa-arrow-right"></i></button>
                 <button id="submitQuiz">Submit</button>
                 <div id="results" style="display: none;">
                     <h2>Your Score: <span id="score"></span> / <span id="totalQuestions"></span></h2>

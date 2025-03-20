@@ -44,7 +44,7 @@ h3 {
 
 #nextPage , #prevPage , #submitQuiz {
     display: block;
-    margin: 20px auto;
+    margin: 35px auto;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #0DC026;
@@ -116,7 +116,14 @@ h3 {
     text-align: center;
 }
 #links{
-    border: 1px solid rgba(0, 0, 0, 0.487);
+    border: none;
+    background-color: #0DC026;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: white;
+}
+.links{
+    border: none;
     background-color: #0DC026;
     padding: 10px 25px;
     border-radius: 5px;

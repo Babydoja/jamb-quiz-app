@@ -1,0 +1,195 @@
+// Handle quiz submission
+// function handleSubmit() {
+//   let score = 0;
+//   shuffledQuestions.forEach((q, index) => {
+//     const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+//     if (selectedOption && selectedOption.value === q.answer) {
+//       score++;
+//     }
+//   }); 
+//   scoreDisplay.textContent = score;
+//   totalQuestionsDisplay.textContent = shuffledQuestions.length;
+//   resultsContainer.style.display = "block";
+//   quizContainer.style.display = "none";
+//   nextBtn.style.display = "none";
+//   prevBtn.style.display = "none";
+//   submitQuiz.style.display = "none";
+//   answersPreviewContainer.style.display = "none";
+
+//   alert(`The score is ${score} out of ${chemistryBank.length}`)
+// }
+
+
+// function loadQuestions(page) {
+//   quizContainer.innerHTML = "";
+
+//   let startIndex = (page - 1) * questionsPerPage;
+//   let endIndex = startIndex + questionsPerPage;
+//   let paginatedQuestions = shuffledQuestions.slice(startIndex, endIndex);
+
+//   paginatedQuestions.forEach((q, index) => {
+//     const questionDiv = document.createElement("div");
+//     questionDiv.classList.add("question");
+
+//     const questionText = document.createElement("h3");
+//     questionText.textContent = `${startIndex + index + 1}. ${q.question}`;
+//     questionDiv.appendChild(questionText);
+
+//     q.options.forEach((option, optIndex) => {
+//       const optionContainer = document.createElement("div");
+//       optionContainer.classList.add("option");
+
+//       const label = document.createElement("label");
+//       label.textContent = `${String.fromCharCode(65 + optIndex)} `; // A, B, C, D
+//       label.style.fontWeight = "bold";
+
+//       const radioInput = document.createElement("input");
+//       radioInput.type = "radio";
+//       radioInput.name = `question${startIndex + index}`;
+//       radioInput.value = option;
+//       radioInput.id = `q${startIndex + index}opt${optIndex}`;
+      
+
+//       const optionText = document.createElement("span");
+//       optionText.textContent = ` ${option}`;
+
+//       optionContainer.appendChild(label);
+//       optionContainer.appendChild(radioInput);
+//       optionContainer.appendChild(optionText);
+//       questionDiv.appendChild(optionContainer);
+//     });
+
+//     quizContainer.appendChild(questionDiv);
+//   });
+
+//   prevBtn.style.display = page === 1 ? "none" : "inline-block";
+//   nextBtn.style.display = endIndex >= shuffledQuestions.length ? "none" : "inline-block";
+// }
+
+
+
+// Load and display questions per page
+// function loadQuestions(page) {
+//   quizContainer.innerHTML = "";
+
+//   let startIndex = (page - 1) * questionsPerPage;
+//   let endIndex = startIndex + questionsPerPage;
+//   let paginatedQuestions = shuffledQuestions.slice(startIndex, endIndex);
+
+//   paginatedQuestions.forEach((q, index) => {
+//     const questionDiv = document.createElement("div");
+//     questionDiv.classList.add("question");
+
+//     const questionText = document.createElement("h3");
+//     questionText.textContent = `${startIndex + index + 1}. ${q.question}`;
+//     questionDiv.appendChild(questionText);
+
+//     q.options.forEach((option, optIndex) => {
+//       const optionContainer = document.createElement("div");
+//       optionContainer.classList.add("option");
+
+//       const label = document.createElement("label");
+//       label.textContent = `${String.fromCharCode(65 + optIndex)} `; // A, B, C, D
+//       label.style.fontWeight = "bold";
+
+//       const radioInput = document.createElement("input");
+//       radioInput.type = "radio";
+//       radioInput.name = `question${startIndex + index}`;
+//       radioInput.value = option;
+//       radioInput.id = `q${startIndex + index}opt${optIndex}`;
+      
+
+//       const optionText = document.createElement("span");
+//       optionText.textContent = ` ${option}`;
+
+//       optionContainer.appendChild(label);
+//       optionContainer.appendChild(radioInput);
+//       optionContainer.appendChild(optionText);
+//       questionDiv.appendChild(optionContainer);
+//     });
+
+//     quizContainer.appendChild(questionDiv);
+//   });
+
+//   prevBtn.style.display = page === 1 ? "none" : "inline-block";
+//   nextBtn.style.display = endIndex >= shuffledQuestions.length ? "none" : "inline-block";
+// }
+
+
+
+
+// function handleSubmit() {
+//   let score = 0;
+//     shuffledQuestions.forEach((q, index) => {
+//       const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+//       if (selectedOption && selectedOption.value === q.answer) {
+//         score++;
+//       }
+//     }); 
+//     scoreDisplay.textContent = score;
+//     totalQuestionsDisplay.textContent = shuffledQuestions.length;
+//     resultsContainer.style.display = "block";
+//     quizContainer.style.display = "none";
+//     nextBtn.style.display = "none";
+//     prevBtn.style.display = "none";
+//     submitQuiz.style.display = "none";
+//     answersPreviewContainer.style.display = "none";
+//     alert(`The score is ${score} out of ${chemistryBank.length}`)
+// }
+
+
+// Handle viewing correct answers
+// function handleViewAnswers() {
+//   correctAnswersList.innerHTML = "";
+//   shuffledQuestions.forEach((q, index) => {
+//     const li = document.createElement("li");
+//     li.textContent = `${index + 1}. ${q.question} - Correct Answer: ${q.answer}`;
+//     correctAnswersList.appendChild(li);
+//   });
+//   answersPreviewContainer.style.display = "block";
+//   resultsContainer.style.display = "none";
+// }
+
+// Event listeners
+// document.getElementById("submitQuiz").addEventListener("click", handleSubmit);
+
+// nextBtn.addEventListener("click", () => {
+//   currentPage++;
+//   loadQuestions(currentPage);
+// });
+// prevBtn.addEventListener("click", () => {
+//   currentPage--;
+//   loadQuestions(currentPage);
+// });
+
+// Initial load
+// shuffleArray(shuffledQuestions);
+// loadQuestions(currentPage);
+
+// correct 
+// function loadQuestions(page) {
+//   quizContainer.innerHTML = "";
+//   const startIndex = (page - 1) * questionsPerPage;
+//   const endIndex = startIndex + questionsPerPage;
+//   const questionsToShow = shuffledQuestions.slice(startIndex, endIndex);
+
+//   questionsToShow.forEach((question) => {
+//     const questionElement = document.createElement("div");
+//     questionElement.classList.add("question");
+//     questionElement.innerHTML = `<p>${question.id}. ${question.question}</p>`;
+
+//     question.options.forEach((option) => {
+//       const label = document.createElement("label");
+//       label.innerHTML = `<input type="radio" name="question${question.id}" value="${option}" ${userAnswers[question.id] === option ? "checked" : ""}> ${option}`;
+//       label.addEventListener("change", (e) => {
+//         userAnswers[question.id] = e.target.value;
+//       });
+//       questionElement.appendChild(label);
+//     });
+
+//     quizContainer.appendChild(questionElement);
+//   });
+
+//   prevBtn.disabled = page === 1;
+//   nextBtn.disabled = page * questionsPerPage >= shuffledQuestions.length;
+// }

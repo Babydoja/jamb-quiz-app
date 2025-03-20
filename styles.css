@@ -69,7 +69,14 @@ body {
     text-align: center;
 }
 #links{
-    border: 1px solid rgba(0, 0, 0, 0.487);
+    border: none;
+    background-color: #0DC026;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: white;
+}
+.links{
+    border: none;
     background-color: #0DC026;
     padding: 10px 25px;
     border-radius: 5px;

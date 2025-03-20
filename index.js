@@ -35,3 +35,11 @@ function calculateResult() {
 
 console.log(document.getElementById("toggleCalc"));  
 console.log(document.getElementById("calculator"));
+
+
+document.getElementById("subjectSelect").addEventListener("change", function() {
+  const selectedValue = this.value;
+  if (selectedValue) {
+      window.location.href = selectedValue;
+  }
+});

@@ -34,11 +34,17 @@
             <div class="middlebar"> 
                 <div><a href="/"><i class="fa-solid fa-house home"></i></a></div>
                 <ul>
-                    <li><a href="./math.html" id="links">Mathematics</a></li>
-                    <li><a href="./english.html" id="links">English</a></li>
-                    <li><a href="./chemistry.html" id="links">Chemistry</a></li>
-                    <li><a href="./physics.html" id="links">Physics</a></li>
-                    <li><a href="./biology.html" id="links">Biology</a></li>
+                    <li><a href="math.html" id="links">Mathematics</a></li>
+                    <!-- <li><a href="english.html" id="links">English</a></li> -->
+                    <li>
+                        <select id="subjectSelect" class="links">
+                            <option value="">Select a subject</option>
+                            <option value="english.html">English</option>
+                            <option value="chemistry.html">Chemistry</option>
+                            <option value="physics.html">Physics</option>
+                            <option value="biology.html">Biology</option>
+                        </select>
+                    </li>
                 </ul>
                 <!-- <div class="calc-toggle">
                     <i class="fa-solid fa-calculator" id="toggleCalc"></i>
@@ -99,7 +105,7 @@
     
 
     <div class="info">
-        <p class="infop">Need Help ? Chat with us</p>
+        <p class="infop"><a href="https://wa.me/2348087128776" target="_blank">Need Help ? Chat with us</a></p>
         <button><a href="https://wa.me/2348087128776" target="_blank"><i class="fa-brands fa-whatsapp icon"></i></a></button>
     </div>
     <script src="index.js"></script>

@@ -302,7 +302,6 @@ const mathematicsBank = [
     // Add more questions here...
 ];
 
-
 const quizContainer = document.getElementById("quizQuestions");
 const resultsContainer = document.getElementById("results");
 const answersPreviewContainer = document.getElementById("answersPreview");
@@ -311,170 +310,145 @@ const scoreDisplay = document.getElementById("score");
 const totalQuestionsDisplay = document.getElementById("totalQuestions");
 const nextBtn = document.getElementById("nextPage");
 const prevBtn = document.getElementById("prevPage");
-const submitQuiz = document.getElementById('submitQuiz')
+const submitQuiz = document.getElementById("submitQuiz");
+
+
+let userAnswersList = []
+
+let userAnswers = {};
 let currentPage = 1;
-const questionsPerPage = 8;
+const questionsPerPage = 10;
+let answerPerPage = 0
+let shuffledQuestions = [...mathematicsBank]; // Keep shuffled questions consistent
 
-
+// Shuffle function
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; 
+    [array[i], array[j]] = [array[j], array[i]];
   }
 }
+
+
 
 function loadQuestions(page) {
-    quizContainer.innerHTML = ""; 
-    shuffleArray(mathematicsBank)
+  quizContainer.innerHTML = "";
+  const startIndex = (page - 1) * questionsPerPage;
+  const endIndex = startIndex + questionsPerPage;
 
-    let startIndex = (page - 1) * questionsPerPage;
-    let endIndex = startIndex + questionsPerPage;
-    let paginatedQuestions = mathematicsBank.slice(startIndex, endIndex);
+  const questionsToShow = shuffledQuestions
+    .slice()
+    .sort((a, b) => a.id - b.id)
+    .slice(startIndex, endIndex);
 
-    paginatedQuestions.forEach((q, index) => {
-        const questionDiv = document.createElement("div");
-        questionDiv.classList.add("question");
+  questionsToShow.forEach((question) => {
+    const questionElement = document.createElement("div");
+    questionElement.classList.add("question");
+    questionElement.innerHTML = `<h4>${question.id}. ${question.question}</h4>`;
 
-        const questionText = document.createElement("h3");
-        questionText.textContent = `${startIndex + index + 1}. ${q.question}`;
-        questionDiv.appendChild(questionText);
-
-        q.options.forEach((option, optIndex) => {
-            const optionContainer = document.createElement("div");
-            optionContainer.classList.add("option");
-
-            const label = document.createElement("label");
-            label.textContent = `${String.fromCharCode(65 + optIndex)} `; // A, B, C, D
-            label.style.fontWeight = "bold";
-
-            const radioInput = document.createElement("input");
-            radioInput.type = "radio";
-            radioInput.name = `question${startIndex + index}`;
-            radioInput.value = option;
-            radioInput.id = `q${startIndex + index}opt${optIndex}`;
-
-            const optionText = document.createElement("span");
-            optionText.textContent = ` ${option}`;
-
-            optionContainer.appendChild(label);
-            optionContainer.appendChild(radioInput);
-            optionContainer.appendChild(optionText);
-            questionDiv.appendChild(optionContainer);
-        });
-
-        quizContainer.appendChild(questionDiv);
+    question.options.forEach((option, index) => {
+      const optionContainer = document.createElement("div"); 
+      optionContainer.classList.add("option"); 
+    
+      const optionLetters = ["A", "B", "C", "D"]; 
+    
+      const label = document.createElement("label");
+      label.innerHTML = `${optionLetters[index]}. <input type="radio" name="question${question.id}" value="${option}" ${userAnswers[question.id] === option ? "checked" : ""}> ${option}`;
+      
+      label.addEventListener("change", (e) => {
+        userAnswers[question.id] = e.target.value;
+      });
+    
+      optionContainer.appendChild(label);
+      questionElement.appendChild(optionContainer);
     });
 
-    prevBtn.style.display = page === 1 ? "none" : "inline-block";
-    nextBtn.style.display = endIndex >= mathematicsBank.length ? "none" : "inline-block";
+    quizContainer.appendChild(questionElement);
+  });
+  prevBtn.style.display = page > 1 ? "inline-block" : "none"; 
+  nextBtn.style.display = endIndex < shuffledQuestions.length ? "inline-block" : "none"; 
 }
 
-function handleSubmit() {
-    let score = 0;
-    mathematicsBank.forEach((q, index) => {
-        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-        if (selectedOption && selectedOption.value === q.answer) {
-            score++;
-        }
-    });
 
-    scoreDisplay.textContent = score;
-    totalQuestionsDisplay.textContent = mathematicsBank.length;
-    resultsContainer.style.display = "block";
-}
 
+// Pagination handlers
+// next button
 nextBtn.addEventListener("click", () => {
+  if (currentPage * questionsPerPage < shuffledQuestions.length) {
     currentPage++;
     loadQuestions(currentPage);
+  }
 });
 
+// prev button
 prevBtn.addEventListener("click", () => {
+  if (currentPage > 1) {
     currentPage--;
     loadQuestions(currentPage);
+  }
+});
+
+// Submit quiz and calculate score
+submitQuiz.addEventListener("click", () => {
+  let score = 0;
+  correctAnswersList.innerHTML = "";
+
+  shuffledQuestions.forEach((question) => {
+    if (userAnswers[question.id] === question.answer) {
+      score++;
+    }
+
+    const answerItem = document.createElement("li");
+    answerItem.textContent = `${question.question} - Correct Answer: ${question.answer}`;
+    correctAnswersList.appendChild(answerItem);
+  });
+
+  scoreDisplay.textContent = score;
+  totalQuestionsDisplay.textContent = shuffledQuestions.length;
+  resultsContainer.style.display = "block";
+  quizContainer.style.display = "none";
+  nextBtn.style.display = "none";
+  prevBtn.style.display = "none";
+  submitQuiz.style.display = "none";
+  answersPreviewContainer.style.display = "none";
 });
 
 
-function handleSubmit() {
-    let score = 0;
-    mathematicsBank.forEach((q, index) => {
-        const selectedOption = document.querySelector(
-            `input[name="question${index}"]:checked`
-        );
-        if (selectedOption && selectedOption.value === q.answer) {
-            score++;
-        }
-    });
 
-    scoreDisplay.textContent = score;
-    totalQuestionsDisplay.textContent = mathematicsBank.length;
-    resultsContainer.style.display = "block";
-    quizContainer.style.display = "none";
-    nextBtn.style.display = 'none'
-    prevBtn.style.display = 'none'
-    submitQuiz.style.display = 'none'
-    answersPreviewContainer.style.display = "none";
-
-}
-
+// function to preview answers
 function handleViewAnswers() {
-    correctAnswersList.innerHTML = "";
-    mathematicsBank.forEach((q, index) => {
-        const li = document.createElement("li");
-        li.textContent = `${index + 1}. ${q.question} - Correct Answer: ${q.answer}`;
-        correctAnswersList.appendChild(li);
-    });
-    answersPreviewContainer.style.display = "block";
-    resultsContainer.style.display = "none";
+  correctAnswersList.innerHTML = "";
+  shuffledQuestions.forEach((q, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${index + 1}. ${q.question} - Correct Answer: ${q.answer}`;
+    correctAnswersList.appendChild(li);
+  });
+
+  answersPreviewContainer.style.display = "block";
+  resultsContainer.style.display = "none";
+  quizContainer.style.display = "none"; 
+  nextBtn.style.display = "none";
+  prevBtn.style.display = "none";
+  submitQuiz.style.display = "none";
 }
 
-document.getElementById("submitQuiz").addEventListener("click", handleSubmit);
 document.getElementById("viewAnswers").addEventListener("click", handleViewAnswers);
 
-
+// reload the quiz 
 function backToQuiz(){
-    location.reload();
+  location.reload();
 }
 document.getElementById('onload').addEventListener('click' ,backToQuiz )
+
+// Initialize quiz
+shuffleArray(shuffledQuestions);
 loadQuestions(currentPage);
 
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleButton = document.getElementById("toggleCalc");
-  const calculator = document.getElementById("calculator");
-
-  if (toggleButton && calculator) {
-      toggleButton.addEventListener("click", function () {
-          calculator.style.display = (calculator.style.display === "none" || calculator.style.display === "") ? "block" : "none";
-      });
-  } else {
-      console.error("Calculator or toggle button not found in the DOM.");
+// function for selecting each subject
+document.getElementById("subjectSelect").addEventListener("change", function() {
+  const selectedValue = this.value;
+  if (selectedValue) {
+      window.location.href = selectedValue;
   }
 });
 
-
-function appendToDisplay(value) {
-  document.getElementById("calc-display").value += value;
-}
-
-function clearDisplay() {
-  document.getElementById("calc-display").value = "";
-}
-function deleteDisplay() {
-  let display = document.getElementById("calc-display");
-  display.value = display.value.slice(0, -1);
-}
-
-
-function calculateResult() {
-  try {
-      document.getElementById("calc-display").value = eval(document.getElementById("calc-display").value);
-  } catch {
-      document.getElementById("calc-display").value = "Error";
-  }
-}
-
-console.log(document.getElementById("toggleCalc"));  
-console.log(document.getElementById("calculator"));
